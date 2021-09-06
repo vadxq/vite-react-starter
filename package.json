@@ -1,0 +1,112 @@
+{
+  "name": "ncuhomesite",
+  "version": "0.1.0",
+  "description": "ncuhomesite",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --mode mock",
+    "dev:alpha": "vite --mode alpha",
+    "dev:test": "vite --mode test",
+    "dev:test1": "vite --mode test1",
+    "dev:grey": "vite --mode grey",
+    "build:test": "tsc --noEmit && vite build --mode test",
+    "build:test1": "tsc --noEmit && vite build --mode test1",
+    "build": "tsc --noEmit && vite build --mode prod",
+    "deploy": "TS_NODE_PROJECT='./build/tsconfig.json' ts-node ./build/build",
+    "serve": "vite preview",
+    "log": "npx conventional-changelog --config ./node_modules/@commitlint/cli -i CHANGELOG.md -s -r 0",
+    "prepare": "husky install",
+    "lint": "npx lint-staged",
+    "commit": "cz",
+    "release": "yarn log && git add . && cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadxq/vite-react-prod-template.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "vadxq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vadxq/vite-react-prod-template/issues"
+  },
+  "homepage": "https://github.com/vadxq/vite-react-prod-template#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lib-flexible": "^0.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@types/node": "^15.0.3",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vitejs/plugin-legacy": "^1.3.2",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "autoprefixer": "^10.2.5",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "mockjs": "^1.1.0",
+    "postcss": "^8.2.15",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "prettier": "^2.2.1",
+    "qiniu": "^7.4.0",
+    "sass": "^1.32.12",
+    "stylelint": "^13.13.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "tailwindcss": "^2.2.9",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.2.0",
+    "vconsole": "^3.6.1",
+    "vite": "^2.2.3",
+    "vite-plugin-eslint": "^1.3.0",
+    "vite-plugin-mock": "^2.5.0",
+    "vite-plugin-style-import": "^1.2.1",
+    "vite-plugin-vconsole": "^1.1.0",
+    "vite-plugin-windicss": "^1.4.1",
+    "windicss": "^3.1.7"
+  },
+  "browserslist": [
+    "last 5 versions",
+    "> 1%",
+    "not IE <= 10"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": "prettier . -w",
+    "*.{ts,tsx,js}": "eslint . --fix",
+    "*.{css,scss,less,sass}": "stylelint --fix",
+    "*": "prettier . -w -u"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.js"
+    }
+  }
+}

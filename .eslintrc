@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "promise",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "settings": {
+    "import/ignore": ["node_modules"],
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-debugger": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  }
+}
