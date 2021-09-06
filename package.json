@@ -17,6 +17,7 @@
     "log": "npx conventional-changelog --config ./node_modules/@commitlint/cli -i CHANGELOG.md -s -r 0",
     "prepare": "husky install",
     "lint": "npx lint-staged",
+    "analysis": "windicss-analysis",
     "commit": "cz",
     "release": "yarn log && git add . && cz"
   },
@@ -82,7 +83,8 @@
     "vite-plugin-style-import": "^1.2.1",
     "vite-plugin-vconsole": "^1.1.0",
     "vite-plugin-windicss": "^1.4.1",
-    "windicss": "^3.1.7"
+    "windicss": "^3.1.7",
+    "windicss-analysis": "^0.3.4"
   },
   "browserslist": [
     "last 5 versions",

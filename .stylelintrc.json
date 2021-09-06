@@ -4,7 +4,19 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["function", "if", "each", "include", "mixin"]
+        "ignoreAtRules": [
+          "function",
+          "if",
+          "each",
+          "include",
+          "mixin",
+          "extends",
+          "tailwind",
+          "screen",
+          "apply",
+          "layer",
+          "variants"
+        ]
       }
     ]
   },

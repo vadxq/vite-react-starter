@@ -11,6 +11,13 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px'
+      },
       colors: {
         teal: {
           100: '#096'
@@ -18,5 +25,8 @@ export default defineConfig({
       }
     }
   },
-  plugins: [formsPlugin]
+  plugins: [formsPlugin],
+  extract: {
+    include: ['src/**/*.{jsx,tsx,svelte}', 'shared/**/*.{ts}']
+  }
 });

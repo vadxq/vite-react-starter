@@ -19,7 +19,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "@/styles/reset.scss";@import "@/styles/variables.scss";@import "@/styles/indexdev.scss";`
+          additionalData: `@import "@/styles/reset.scss";@import "@/styles/variables.scss";@import "@/styles/index.scss";`
         }
       }
     },
