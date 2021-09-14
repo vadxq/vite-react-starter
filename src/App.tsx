@@ -1,15 +1,11 @@
 import React from 'react';
-import Home from '@/views/home';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import Layout from '@/layouts';
 
 const App = (): JSX.Element => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <Layout />
     </BrowserRouter>
   );
 };

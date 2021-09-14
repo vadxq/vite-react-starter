@@ -1,12 +1,12 @@
-# Vue 3 + Typescript + Vite
+# React + Typescript + Vite
 
-Vue3 工程化项目实践demo
+React 工程化项目实践demo
 
 - 编程语言：TypeScript 4.2.4
 - 构建工具：Vite 2
-- 前端框架：Vue 3.0.11
-- 路由工具：Vue Router 4.0.6
-- 状态管理：Vuex 4.0.0
+- 前端框架：React 17+
+- 路由工具：Ract Router
+- 状态管理：暂未引入，可以自选redux或者mobx
 - CSS：Sass + Postcss
 - HTTP 工具：Axios
 - MOCK: mockjs + vite plugins

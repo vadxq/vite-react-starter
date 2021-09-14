@@ -5,7 +5,6 @@ import eslintPlugin from 'vite-plugin-eslint';
 import { projectBasePath, cdnConfig, baseConfig } from './build/config';
 import reactRefresh from '@vitejs/plugin-react-refresh';
 import styleImport from 'vite-plugin-style-import';
-import WindiCSS from 'vite-plugin-windicss';
 // import * as pkg from './package.json';
 import { viteMockServe } from 'vite-plugin-mock';
 import { viteVConsole } from 'vite-plugin-vconsole';
@@ -35,7 +34,6 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         : './',
     plugins: [
       reactRefresh(),
-      WindiCSS(),
       styleImport({
         libs: [
           {
