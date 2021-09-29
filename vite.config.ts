@@ -4,7 +4,6 @@ import { resolve } from 'path';
 import eslintPlugin from 'vite-plugin-eslint';
 import { projectBasePath, cdnConfig, baseConfig } from './build/config';
 import reactRefresh from '@vitejs/plugin-react-refresh';
-import styleImport from 'vite-plugin-style-import';
 // import * as pkg from './package.json';
 import { viteMockServe } from 'vite-plugin-mock';
 import { viteVConsole } from 'vite-plugin-vconsole';
@@ -20,6 +19,9 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         scss: {
           additionalData: `@import "@/styles/reset.scss";@import "@/styles/variables.scss";@import "@/styles/index.scss";`
         }
+      },
+      modules: {
+        generateScopedName: '[name]__[local]___[hash:base64:5]'
       }
     },
     base:
@@ -34,20 +36,6 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         : './',
     plugins: [
       reactRefresh(),
-      styleImport({
-        libs: [
-          {
-            libraryName: 'vant',
-            esModule: true,
-            resolveStyle: (name) => `vant/es/${name}/style`
-          },
-          {
-            libraryName: 'vant',
-            esModule: true,
-            resolveStyle: (name) => `vant/es/${name}/style/less`
-          }
-        ]
-      }),
       viteMockServe({
         mockPath: 'mocks',
         supportTs: true,

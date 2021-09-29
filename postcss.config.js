@@ -14,5 +14,8 @@ module.exports = {
       mediaQuery: false, //（布尔值）允许在媒体查询中转换px。
       minPixelValue: 0 // 设置要替换的最小像素值(3px会被转rem)。 默认 0
     }
+    // 'postcss-modules': {
+    //   generateScopedName: '[name]__[local]___[hash:base64:5]'
+    // }
   }
 };

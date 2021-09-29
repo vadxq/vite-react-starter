@@ -1,7 +1,7 @@
 {
-  "name": "ncuhomesite",
+  "name": "vite-react-starter",
   "version": "0.1.0",
-  "description": "ncuhomesite",
+  "description": "vite-react-starter",
   "main": "index.js",
   "scripts": {
     "dev": "vite --mode mock",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vadxq/vite-react-prod-template.git"
+    "url": "git+https://github.com/vadxq/vite-react-starter.git"
   },
   "keywords": [
     "react"
@@ -30,9 +30,9 @@
   "author": "vadxq",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vadxq/vite-react-prod-template/issues"
+    "url": "https://github.com/vadxq/vite-react-starter/issues"
   },
-  "homepage": "https://github.com/vadxq/vite-react-prod-template#readme",
+  "homepage": "https://github.com/vadxq/vite-react-starter#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "lib-flexible": "^0.3.2",
@@ -78,7 +78,6 @@
     "vite": "^2.2.3",
     "vite-plugin-eslint": "^1.3.0",
     "vite-plugin-mock": "^2.5.0",
-    "vite-plugin-style-import": "^1.2.1",
     "vite-plugin-vconsole": "^1.1.0"
   },
   "browserslist": [

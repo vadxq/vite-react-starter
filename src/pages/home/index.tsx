@@ -1,9 +1,11 @@
 import React from 'react';
-import './index.scss';
+import NavBar from '@/components/navbar';
+import Styles from './style.module.scss';
 
 const Home = (): JSX.Element => {
   return (
-    <div className="h-screen font-sans tracking-wider home">
+    <div className={Styles['home']}>
+      <NavBar />
       <div className="flex items-center">
         <div className="g-parallax-container">
           <div className="item_1 basic_setting"></div>
