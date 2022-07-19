@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom';
-import config from '@/configs/route';
+import config from '@/configs/base';
 import MainRoutes from './MainRoutes';
 import AuthenticationRoutes from './AuthenticationRoutes';
 

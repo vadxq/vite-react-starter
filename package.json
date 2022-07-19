@@ -10,7 +10,6 @@
     "dev:grey": "vite --mode grey",
     "build:test": "tsc && vite build --mode test",
     "build": "tsc && vite build --mode prod",
-    "deploy": "TS_NODE_PROJECT='./build/tsconfig.json' ts-node ./build/build",
     "serve": "vite preview",
     "log": "npx conventional-changelog --config ./node_modules/@commitlint/cli -i CHANGELOG.md -s -r 0",
     "prepare": "husky install",

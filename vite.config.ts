@@ -2,7 +2,7 @@ import { ConfigEnv, UserConfigExport } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import eslintPlugin from 'vite-plugin-eslint';
-import { baseConfig, cdnConfig, projectBasePath } from './build/config';
+import baseConfig, { projectBasePath } from './src/configs/base';
 import { viteMockServe } from 'vite-plugin-mock';
 import { viteVConsole } from 'vite-plugin-vconsole';
 
@@ -21,7 +21,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     },
     base:
       mode === 'prod'
-        ? `${cdnConfig.host}${projectBasePath}`
+        ? `${baseConfig.cdn.host}${projectBasePath}`
         : mode === 'test'
         ? baseConfig.publicPath + '/'
         : mode === 'grey'
