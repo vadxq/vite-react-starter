@@ -9,5 +9,5 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "include": ["vite.config.ts", "package.json", "./src/*"]
+  "include": ["vite.config.ts", "package.json", "./src/**/*.ts"]
 }
