@@ -1,9 +1,12 @@
 {
   "root": true,
   "env": {
-    "node": true
+    "node": true,
+    "browser": true,
+    "es2021": true
   },
   "extends": [
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
@@ -17,22 +20,37 @@
       "modules": true
     }
   },
-  "plugins": [
-    "react",
-    "prettier",
-    "promise",
-    "@typescript-eslint",
-    "react-hooks"
-  ],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "settings": {
     "import/ignore": ["node_modules"],
     "react": {
-      "version": "latest"
+      "version": "detect"
     }
   },
   "rules": {
-    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": true,
+        "bracketSpacing": true,
+        "tabWidth": 2,
+        "useTabs": false,
+        "htmlWhitespaceSensitivity": "strict",
+        "trailingComma": "none",
+        "endOfLine": "lf"
+      }
+    ],
     "no-debugger": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-console": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ]
   }
 }

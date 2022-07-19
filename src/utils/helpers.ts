@@ -131,3 +131,11 @@ export const getPlatform = (): string => {
 export const getDate = (date: string): Date => {
   return new Date(date.replace(/-/g, '/'));
 };
+
+export const toPercent = (val: number) => {
+  return `${(Math.abs(val) * 100).toFixed(2)}%`;
+};
+
+export const copyMsg = (msg: string) => {
+  navigator.clipboard.writeText(msg);
+};

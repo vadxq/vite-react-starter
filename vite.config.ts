@@ -1,10 +1,8 @@
 import { ConfigEnv, UserConfigExport } from 'vite';
-import legacy from '@vitejs/plugin-legacy';
+import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import eslintPlugin from 'vite-plugin-eslint';
-import { projectBasePath, cdnConfig, baseConfig } from './build/config';
-import reactRefresh from '@vitejs/plugin-react-refresh';
-// import * as pkg from './package.json';
+import { baseConfig, cdnConfig, projectBasePath } from './build/config';
 import { viteMockServe } from 'vite-plugin-mock';
 import { viteVConsole } from 'vite-plugin-vconsole';
 
@@ -17,11 +15,8 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "@/styles/reset.scss";@import "@/styles/variables.scss";@import "@/styles/index.scss";`
+          additionalData: `@import "@/styles/reset.scss";@import "@/styles/variables.scss";`
         }
-      },
-      modules: {
-        generateScopedName: '[name]__[local]___[hash:base64:5]'
       }
     },
     base:
@@ -29,13 +24,11 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         ? `${cdnConfig.host}${projectBasePath}`
         : mode === 'test'
         ? baseConfig.publicPath + '/'
-        : mode === 'test1'
-        ? baseConfig.publicPath + '/'
         : mode === 'grey'
         ? baseConfig.publicPath + '/'
         : './',
     plugins: [
-      reactRefresh(),
+      react(),
       viteMockServe({
         mockPath: 'mocks',
         supportTs: true,
@@ -48,7 +41,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         // `
       }),
       viteVConsole({
-        entry: resolve(__dirname, './src/main.ts'),
+        entry: resolve(__dirname, './src/main.tsx'),
         localEnabled: true,
         enabled:
           command !== 'serve' &&
@@ -58,36 +51,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           theme: 'light'
         }
       }),
-      eslintPlugin(),
-      legacy({
-        // 不考虑ie的兼容性和老的vivo/锤子/荣耀等国产机型，则可以使用下面
-        // targets: ['defaults', 'not IE 11', '> 0.25%, not dead'],
-        // 如果考虑上面说的兼容性问题，使用下面配置
-        targets: ['ie >= 11'],
-        additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
-
-        // 下面可以根据情况选用
-        renderLegacyChunks: true,
-        polyfills: [
-          'es.symbol',
-          'es.array.filter',
-          'es.promise',
-          'es.promise.finally',
-          'es/map',
-          'es/set',
-          'es.array.for-each',
-          'es.object.define-properties',
-          'es.object.define-property',
-          'es.object.get-own-property-descriptor',
-          'es.object.get-own-property-descriptors',
-          'es.object.keys',
-          'es.object.to-string',
-          'web.dom-collections.for-each',
-          'esnext.global-this',
-          'esnext.string.match-all'
-        ],
-        modernPolyfills: ['es.promise.finally']
-      })
+      eslintPlugin()
     ],
     server: {
       host: '0.0.0.0',
@@ -100,8 +64,6 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
               ? 'http://alpha-api.vadxq.com'
               : mode === 'test'
               ? 'http://test-api.vadxq.com'
-              : mode === 'test1'
-              ? 'http://test1-api.vadxq.com'
               : mode === 'grey'
               ? 'https://api.vadxq.com'
               : mode === 'prod'
@@ -121,7 +83,21 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       target: 'es2015',
       outDir: './dist/',
       cssCodeSplit: true,
-      sourcemap: true
+      polyfillModulePreload: true,
+      sourcemap: true,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return id
+                .toString()
+                .split('node_modules/')[1]
+                .split('/')[0]
+                .toString();
+            }
+          }
+        }
+      }
     }
   };
 };

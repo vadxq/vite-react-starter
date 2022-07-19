@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import 'lib-flexible';
+import 'amfe-flexible';
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches)
   document.documentElement.classList.add('dark');
 else document.documentElement.classList.add('light');
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('app')
+  </React.StrictMode>
 );
