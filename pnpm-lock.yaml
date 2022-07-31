@@ -3,6 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
+  '@tailwindcss/aspect-ratio': ^0.4.0
+  '@tailwindcss/forms': ^0.5.2
+  '@tailwindcss/line-clamp': ^0.4.0
+  '@tailwindcss/typography': ^0.5.4
   '@types/node': ^18.0.6
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
@@ -26,7 +30,6 @@ specifiers:
   mockjs: ^1.1.0
   postcss-import: ^14.1.0
   prettier: ^2.7.1
-  prettier-plugin-tailwindcss: ^0.1.13
   react: ^18.2.0
   react-dom: ^18.2.0
   react-hot-toast: ^2.3.0
@@ -55,6 +58,10 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.0.3
   '@commitlint/config-conventional': 17.0.3
+  '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.1.7
+  '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.7
+  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.1.7
+  '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.7
   '@types/node': 18.0.6
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
@@ -78,7 +85,6 @@ devDependencies:
   mockjs: 1.1.0
   postcss-import: 14.1.0
   prettier: 2.7.1
-  prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   sass: 1.53.0
   stylelint: 14.9.1
   stylelint-config-prettier: 9.0.3_stylelint@14.9.1
@@ -882,6 +888,54 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /@tailwindcss/aspect-ratio/0.4.0_tailwindcss@3.1.7:
+    resolution:
+      {
+        integrity: sha512-WJu0I4PpqNPuutpaA9zDUq2JXR+lorZ7PbLcKNLmb6GL9/HLfC7w3CRsMhJF4BbYd/lkY6CfXOvkYpuGnZfkpQ==
+      }
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.1.7_ts-node@10.9.1
+    dev: true
+
+  /@tailwindcss/forms/0.5.2_tailwindcss@3.1.7:
+    resolution:
+      {
+        integrity: sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w==
+      }
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.1.7_ts-node@10.9.1
+    dev: true
+
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.1.7:
+    resolution:
+      {
+        integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==
+      }
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.1.7_ts-node@10.9.1
+    dev: true
+
+  /@tailwindcss/typography/0.5.4_tailwindcss@3.1.7:
+    resolution:
+      {
+        integrity: sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==
+      }
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      tailwindcss: 3.1.7_ts-node@10.9.1
     dev: true
 
   /@tsconfig/node10/1.0.9:
@@ -4857,10 +4911,24 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.castarray/4.4.0:
+    resolution:
+      {
+        integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==
+      }
+    dev: true
+
   /lodash.ismatch/4.4.0:
     resolution:
       {
         integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==
+      }
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution:
+      {
+        integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
       }
     dev: true
 
@@ -5086,6 +5154,14 @@ packages:
         integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
       }
     engines: { node: '>=4' }
+    dev: true
+
+  /mini-svg-data-uri/1.4.4:
+    resolution:
+      {
+        integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
+      }
+    hasBin: true
     dev: true
 
   /minimatch/3.1.2:
@@ -5867,18 +5943,6 @@ packages:
     engines: { node: '>=6.0.0' }
     dependencies:
       fast-diff: 1.2.0
-    dev: true
-
-  /prettier-plugin-tailwindcss/0.1.13_prettier@2.7.1:
-    resolution:
-      {
-        integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==
-      }
-    engines: { node: '>=12.17.0' }
-    peerDependencies:
-      prettier: '>=2.2.0'
-    dependencies:
-      prettier: 2.7.1
     dev: true
 
   /prettier/2.7.1:
