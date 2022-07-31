@@ -1,21 +1,14 @@
-import { Box, Button } from '@mui/material';
-
 const Home = (): JSX.Element => {
   return (
-    <Box>
-      <div className="flex items-center">
-        <div className="g-parallax-container">home</div>
-        <Button
-          sx={{
-            width: '2rem',
-            height: '1rem'
-          }}
-          variant="primary"
-        >
-          xxx
-        </Button>
-      </div>
-    </Box>
+    <div className="flex items-center">
+      <div className="g-parallax-container">home</div>
+      <button
+        className="text-lg px-1 py-2 rounded bg-green-800 hover:bg-green-600 text-white"
+        type="button"
+      >
+        count+
+      </button>
+    </div>
   );
 };
 

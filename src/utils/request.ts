@@ -1,7 +1,3 @@
-import Qs from 'qs';
-
-import { getCookie } from './cookie';
-
 interface RequestOptions extends RequestInit {
   responseType?:
     | 'TEXT'
@@ -28,19 +24,10 @@ const inital: RequestOptions = {
 
 // 发送数据请求
 const request = async (url: string, config?: RequestOptions) => {
-  let finalUrl: string = url;
+  const finalUrl: string = url;
   const configs: RequestOptions = { ...inital, ...config };
   if (config && config.headers)
     configs.headers = { ...inital.headers, ...config.headers };
-
-  // uid
-  const uid =
-    getCookie('uid') || typeof window === 'undefined'
-      ? ''
-      : localStorage.getItem('uid');
-  finalUrl += `${finalUrl.includes('?') ? '&' : '?'}${Qs.stringify({
-    uid
-  })} `;
 
   // body
   if (
@@ -49,7 +36,7 @@ const request = async (url: string, config?: RequestOptions) => {
     configs.responseType &&
     configs.responseType.toUpperCase() === 'JSON'
   ) {
-    configs.body = JSON.stringify({ uid, ...configs.body });
+    configs.body = JSON.stringify({ ...configs.body });
   }
 
   // 基于fetch请求数据

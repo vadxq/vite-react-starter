@@ -1,5 +1,4 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 
 const AuthRoute = (props: {
   [x: string]: any;
@@ -19,7 +18,7 @@ const AuthRoute = (props: {
     return <Route {...otherProps} />;
   } else {
     // 如果没有权限，返回配置的默认路由
-    return <Redirect to={backUrl} />;
+    return <Navigate to={backUrl} />;
   }
 };
 
