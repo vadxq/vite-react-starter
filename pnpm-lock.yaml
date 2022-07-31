@@ -9,7 +9,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.30.7
   '@typescript-eslint/parser': ^5.30.7
   '@vitejs/plugin-react': ^2.0.0
-  amfe-flexible: ^2.2.1
   autoprefixer: ^10.4.7
   commitizen: ^4.2.5
   conventional-changelog-cli: ^2.2.2
@@ -21,13 +20,13 @@ specifiers:
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-react: ^7.30.1
   eslint-plugin-react-hooks: ^4.6.0
+  eslint-plugin-tailwindcss: ^3.6.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
   mockjs: ^1.1.0
   postcss-import: ^14.1.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
-  qs: ^6.11.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-hot-toast: ^2.3.0
@@ -47,8 +46,6 @@ specifiers:
   vite-plugin-vconsole: ^1.2.2
 
 dependencies:
-  amfe-flexible: 2.2.1
-  qs: 6.11.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hot-toast: 2.3.0_biqbaboplfbrettd7655fr4n2y
@@ -75,6 +72,7 @@ devDependencies:
   eslint-plugin-prettier: 4.2.1_g4fztgbwjyq2fvmcscny2sj6fy
   eslint-plugin-react: 7.30.1_eslint@8.20.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.20.0
+  eslint-plugin-tailwindcss: 3.6.0_ts-node@10.9.1
   husky: 8.0.1
   lint-staged: 13.0.3
   mockjs: 1.1.0
@@ -1324,13 +1322,6 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /amfe-flexible/2.2.1:
-    resolution:
-      {
-        integrity: sha512-L2VfvDzoETBjhRptg5u/IUuzHSuxm22JpSRb404p/TBGeRfwWmmNEbB+TFPIP/sS/+pbM18bCFH9QnMojLuPNw==
-      }
-    dev: false
-
   /ansi-escapes/4.3.2:
     resolution:
       {
@@ -1622,6 +1613,7 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.1.2
+    dev: true
 
   /callsites/3.1.0:
     resolution:
@@ -3144,6 +3136,20 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
+  /eslint-plugin-tailwindcss/3.6.0_ts-node@10.9.1:
+    resolution:
+      {
+        integrity: sha512-gWLGNWHuhh5ngwkJ2sgSByanpRw2s5GdrM2ff2/w8Ho2mWh2MyGvpnFZpL4b0XT/C0WF9zlq57+vFHJOeFhMkg==
+      }
+    engines: { node: '>=12.13.0' }
+    dependencies:
+      fast-glob: 3.2.11
+      postcss: 8.4.14
+      tailwindcss: 3.1.7_ts-node@10.9.1
+    transitivePeerDependencies:
+      - ts-node
+    dev: true
+
   /eslint-scope/5.1.1:
     resolution:
       {
@@ -3644,6 +3650,7 @@ packages:
       {
         integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
       }
+    dev: true
 
   /function.prototype.name/1.1.5:
     resolution:
@@ -3697,6 +3704,7 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
+    dev: true
 
   /get-pkg-repo/4.2.1:
     resolution:
@@ -4031,6 +4039,7 @@ packages:
         integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==
       }
     engines: { node: '>= 0.4' }
+    dev: true
 
   /has-tostringtag/1.0.0:
     resolution:
@@ -4050,6 +4059,7 @@ packages:
     engines: { node: '>= 0.4.0' }
     dependencies:
       function-bind: 1.1.1
+    dev: true
 
   /history/5.3.0:
     resolution:
@@ -5292,6 +5302,7 @@ packages:
       {
         integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==
       }
+    dev: true
 
   /object-keys/1.1.1:
     resolution:
@@ -5913,16 +5924,6 @@ packages:
     engines: { node: '>=0.6.0', teleport: '>=0.2.0' }
     dev: true
 
-  /qs/6.11.0:
-    resolution:
-      {
-        integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==
-      }
-    engines: { node: '>=0.6' }
-    dependencies:
-      side-channel: 1.0.4
-    dev: false
-
   /queue-microtask/1.2.3:
     resolution:
       {
@@ -6488,6 +6489,7 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.2
       object-inspect: 1.12.2
+    dev: true
 
   /signal-exit/3.0.7:
     resolution:
