@@ -78,7 +78,7 @@
     "vite": "^3.0.0",
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-mock": "^2.9.6",
-    "vite-plugin-vconsole": "^1.2.2"
+    "vite-plugin-vconsole": "^1.3.1"
   },
   "browserslist": [
     "last 5 versions",

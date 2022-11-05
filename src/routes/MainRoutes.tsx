@@ -3,11 +3,23 @@ import { Navigate } from 'react-router-dom';
 
 // project imports
 import Layout from '@/components/layout';
-
 import Loadable from '@/components/Loadable';
-
-const Admin = Loadable(lazy(() => import('@/pages/admin')));
 const Home = Loadable(lazy(() => import('@/pages/home')));
+const NotFound = Loadable(lazy(() => import('@/pages/login')));
+
+/**
+ * 公开路由
+ * org/:id
+ * user/:address
+ * sbt/:contract/:tokenid
+ *
+ * 私密路由
+ * profile/setting
+ *
+ * manage/org/send
+ * manage/org/history
+ * manage/org/edit
+ */
 
 const MainRoutes = {
   path: '/',
@@ -18,12 +30,19 @@ const MainRoutes = {
       element: <Navigate to="/home" />
     },
     {
-      path: '/admin',
-      element: <Admin />
+      path: '/home',
+      element: <Home />,
+      meta: {
+        auth: false
+      }
     },
     {
-      path: '/home',
-      element: <Home />
+      // 404
+      path: '/*',
+      element: <NotFound />,
+      meta: {
+        auth: false
+      }
     }
   ]
 };

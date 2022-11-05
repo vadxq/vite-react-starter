@@ -1,8 +1,9 @@
-import { useRoutes } from 'react-router-dom';
-import config from '@/configs/base';
 import MainRoutes from './MainRoutes';
-import AuthenticationRoutes from './AuthenticationRoutes';
+import RouterGurad from './gurad';
+
+// const basename = '';
 
 export default function ThemeRoutes() {
-  return useRoutes([MainRoutes, AuthenticationRoutes], config.basename);
+  // return useRoutes([MainRoutes, AuthenticationRoutes], basename);
+  return RouterGurad([MainRoutes]);
 }
